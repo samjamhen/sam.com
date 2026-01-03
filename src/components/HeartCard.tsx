@@ -28,6 +28,8 @@ export default function HeartCard(props: TravelProp | SportsProp) {
             >
               <img
                 src={picture}
+                srcSet={`${picture}?w=400 400w, ${picture}?w=800 800w, ${picture}?w=1200 1200w`}
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 800px"
                 alt={`${country} - ${index + 1}`}
                 loading="lazy"
                 decoding="async"
