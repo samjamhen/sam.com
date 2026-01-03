@@ -19,8 +19,8 @@ export const genetecSupport2 = "Built a pricing tool on Microsoft Excel to gener
 
 {/*Travel and Sports*/}
 {/*Teams*/}
-export const habs = `${import.meta.env.BASE_URL}/assets/pictures/sports/habs.png`;
-export const liverpewl = `${import.meta.env.BASE_URL}/assets/pictures/sports/courseLad.png`;
+export const habs = `${import.meta.env.BASE_URL}/assets/pictures/sports/habs.webp`;
+export const liverpewl = `${import.meta.env.BASE_URL}/assets/pictures/sports/courseLad.webp`;
 
 {/*Hawaii*/}
 
@@ -30,10 +30,10 @@ export const hawaii3 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/cloud
 export const hawaii4 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/waves.jpg`;
 
 {/*Portugal*/}
-export const portugal1 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/water.jpg`;
-export const portugal2 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/sunset.jpg`;
-export const portugal3 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/montagne.jpg`;
-export const portugal4 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/fubo.jpg`;
+export const portugal1 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/water.webp`;
+export const portugal2 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/sunset.webp`;
+export const portugal3 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/montagne.webp`;
+export const portugal4 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/fubo.webp`;
 
 {/*Thailand*/}
 export const thai1 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/cannonball.webp`;
