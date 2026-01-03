@@ -29,6 +29,8 @@ export default function HeartCard(props: TravelProp | SportsProp) {
               <img
                 src={picture}
                 alt={`${country} - ${index + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-[100px] h-auto rounded-md shadow-sm ml-2 mb-2"
               />
             </a>
