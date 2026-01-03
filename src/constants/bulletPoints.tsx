@@ -36,10 +36,10 @@ export const portugal3 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/m
 export const portugal4 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/fubo.jpg`;
 
 {/*Thailand*/}
-export const thai1 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/cannonball.jpg`;
-export const thai2 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/floating.jpg`;
-export const thai3 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/stevey.jpg`;
-export const thai4 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/blueWater.jpg`;
+export const thai1 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/cannonball.webp`;
+export const thai2 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/floating.webp`;
+export const thai3 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/stevey.webp`;
+export const thai4 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/blueWater.webp`;
 
 {/*Italy*/}
 export const italy1 = `${import.meta.env.BASE_URL}/assets/pictures/italy/coloseo.jpg`;
