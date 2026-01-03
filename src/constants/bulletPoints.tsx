@@ -24,10 +24,10 @@ export const liverpewl = `${import.meta.env.BASE_URL}/assets/pictures/sports/cou
 
 {/*Hawaii*/}
 
-export const hawaii1 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/beach1.jpg`;
-export const hawaii2 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/mountain.jpg`;
-export const hawaii3 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/clouds.jpg`;
-export const hawaii4 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/waves.jpg`;
+export const hawaii1 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/beach1.webp`;
+export const hawaii2 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/mountain.webp`;
+export const hawaii3 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/clouds.webp`;
+export const hawaii4 = `${import.meta.env.BASE_URL}/assets/pictures/hawaii/waves.webp`;
 
 {/*Portugal*/}
 export const portugal1 = `${import.meta.env.BASE_URL}/assets/pictures/portugal/water.webp`;
@@ -42,8 +42,8 @@ export const thai3 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/steve
 export const thai4 = `${import.meta.env.BASE_URL}/assets/pictures/thailand/blueWater.webp`;
 
 {/*Italy*/}
-export const italy1 = `${import.meta.env.BASE_URL}/assets/pictures/italy/coloseo.jpg`;
-export const italy2 = `${import.meta.env.BASE_URL}/assets/pictures/italy/beach1.jpg`;
-export const italy3 = `${import.meta.env.BASE_URL}/assets/pictures/italy/beach2.jpg`;
-export const italy4 = `${import.meta.env.BASE_URL}/assets/pictures/italy/cave.jpg`;
+export const italy1 = `${import.meta.env.BASE_URL}/assets/pictures/italy/coloseo.webp`;
+export const italy2 = `${import.meta.env.BASE_URL}/assets/pictures/italy/beach1.webp`;
+export const italy3 = `${import.meta.env.BASE_URL}/assets/pictures/italy/beach2.webp`;
+export const italy4 = `${import.meta.env.BASE_URL}/assets/pictures/italy/cave.webp`;
 
