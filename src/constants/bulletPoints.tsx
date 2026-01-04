@@ -47,3 +47,37 @@ export const italy2 = `${import.meta.env.BASE_URL}/assets/pictures/italy/beach1.
 export const italy3 = `${import.meta.env.BASE_URL}/assets/pictures/italy/beach2.webp`;
 export const italy4 = `${import.meta.env.BASE_URL}/assets/pictures/italy/cave.webp`;
 
+{/*Personal Projects*/}
+{/*TRAYNE Lesson Offering App*/}
+export const trayneTech = "Spring Boot (Java) & C# (ASP.NET Core), Angular (TypeScript), MySQL"
+export const trayneGit = "https://github.com/samjamhen/lesson-offering-app-TRAYNE"
+export const trayne1 = "Built a full-stack lesson booking system for clients and instructors, featuring role-based login and event management."
+export const trayne2 = "Developed two backend implementations: one with Spring Boot (JPA/Hibernate) and one with ASP.NET Core (EF Core)."
+export const trayne3 = "Used a layered architecture in both versions and integrated a shared Angular frontend using RESTful APIs."
+
+{/*Campus Map Mobile Application*/}
+export const campusMapTech = "React Native, Google Maps API, Mapbox API, Expo"
+export const campusMapGit = "https://github.com/Campus-Compass-SOEN-390/Watermelons_SOEN390"
+export const campusMap1 = "Built an indoor/outdoor campus navigation app integrating custom floor plans and routing across multiple campus buildings."
+export const campusMap2 = "Implemented custom graph data structures representing campus building classrooms and pathways, enabling indoor navigation using Dijkstra’s algorithm for optimal route calculation."
+
+{/*Car Rental Application*/}
+export const carRentalTech = "MERN Stack (MongoDB, Express.js, React.js, Node.js)"
+export const carRentalGit = "https://github.com/samjamhen/Watermelons-soen341projectW2024"
+export const carRental1 = "Designed and implemented the database schema using MongoDB to store vehicle, user, and reservation details."
+export const carRental2 = "Created a user-friendly frontend interface with React.js, catering to both user and system administrator needs"
+export const carRental3 = "Built a RESTful API with Express.js to handle CRUD operations for vehicles, users, and reservations."
+
+{/*Baseball Data Analysis*/}
+export const baseballTech = "Python, Pandas, Matplotlib"
+export const baseballGit = ""
+export const baseball1 = "Analyzed baseball pitch data with Pandas and plotted trajectories using Matplotlib."
+export const baseball2 = "Built a machine learning model using the scikit-learn libraries to predict different possible pitch types based on trajectories."
+export const baseball3 = "Evaluated the performance of the model using metrics such as mean absolute error, R-squared, and visualizations to compare predicted versus actual pitch thrown."
+
+{/*Facial Emotion Recognition with Convolutional Neural Networks*/}
+export const facialRecognitionTech = "Python, TensorFlow"
+export const facialRecognitionGit = ""
+export const facialRecognition1 = "Developed Convolutional Neural Network Models using PyTorch to recognize emotions from labeled grayscale images."
+export const facialRecognition2 = "Built and compared multiple model architectures to evaluate performance, accuracy, and computation efficiency."
+export const facialRecognition3 = "Preprocessed grayscale image data to enhance model training, ensuring optimal feature extraction for emotion recognition."

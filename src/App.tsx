@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BrainCard from "./components/BrainCard";
 import HeartCard from "./components/HeartCard";
+import PencilCard from "./components/PencilCard";
 import {
   intact1, intact2, intact3,
   genetecDev1, genetecDev2,
@@ -10,18 +11,27 @@ import {
   hawaii1, hawaii2, hawaii3, hawaii4,
   portugal1, portugal2, portugal3, portugal4,
   thai1, thai2, thai3, thai4,
-  italy1, italy2, italy3, italy4
+  italy1, italy2, italy3, italy4,
+  trayneTech, trayneGit, trayne1, trayne2, trayne3,
+  campusMapTech, campusMapGit, campusMap1, campusMap2,
+  carRentalTech, carRentalGit, carRental1, carRental2, carRental3,
+  facialRecognitionTech, facialRecognitionGit, facialRecognition1, facialRecognition2, facialRecognition3,
+  baseballTech, baseballGit, baseball1, baseball2, baseball3
 } from "./constants/bulletPoints";
 
 export default function App() {
   const [isHoveredBrain, setIsHoveredBrain] = useState(false);
   const [isHoveredHeart, setIsHoveredHeart] = useState(false);
+  const [isHoveredPencil, setIsHoveredPencil] = useState(false);
 
   const [showBrain, setShowBrain] = useState(true);
   const [showBrainCards, setShowBrainCards] = useState(false);
 
   const [showHeart, setShowHeart] = useState(true);
   const [showHeartCards, setShowHeartCards] = useState(false);
+
+  const [showPencil, setShowPencil] = useState(true);
+  const [showPencilCards, setShowPencilCards] = useState(false);
 
   return (
     <div className="relative w-screen flex flex-col items-center justify-center min-h-screen py-2 font-roboto">
@@ -60,6 +70,14 @@ export default function App() {
             />
           </div>
         )}
+
+        {showPencilCards && (
+          <div className="absolute left-0 flex flex-col gap-4">
+            <PencilCard project="Campus Map Mobile Application" tech={campusMapTech} github={campusMapGit} points={[campusMap1, campusMap2]}/>
+            <PencilCard project="Car Rental Management System" tech={carRentalTech} github={carRentalGit} points={[carRental1, carRental2, carRental3]}/>
+            <PencilCard project="Lesson Offering App" tech={trayneTech} github={trayneGit} points={[trayne1, trayne2, trayne3]}/>
+          </div>
+        )}
       </div>
 
       <div id="name-box" className="flex flex-col items-center h-max">
@@ -91,6 +109,7 @@ export default function App() {
             onClick={() => {
               setShowBrainCards(!showBrainCards);
               setShowHeart(!showHeart);
+              setShowPencil(!showPencil);
             }}
             onMouseEnter={() => setIsHoveredBrain(true)}
             onMouseLeave={() => setIsHoveredBrain(false)}
@@ -109,9 +128,29 @@ export default function App() {
             onClick={() => {
               setShowHeartCards(!showHeartCards);
               setShowBrain(!showBrain);
+              setShowPencil(!showPencil);
             }}
             onMouseEnter={() => setIsHoveredHeart(true)}
             onMouseLeave={() => setIsHoveredHeart(false)}
+          />
+        )}
+
+        {showPencil && (
+          <img
+            src={`${import.meta.env.BASE_URL}/assets/pencil.svg`}
+            alt="Pencil Icon"
+            width={13}
+            height={13}
+            className={`absolute left-[118px] top-[93px] transition-transform ${
+              isHoveredPencil ? "scale-110" : "scale-100"
+            }`}
+            onClick={() => {
+              setShowPencilCards(!showPencilCards);
+              setShowBrain(!showBrain);
+              setShowHeart(!showHeart);
+            }}
+            onMouseEnter={() => setIsHoveredPencil(true)}
+            onMouseLeave={() => setIsHoveredPencil(false)}
           />
         )}
       </div>
@@ -169,6 +208,13 @@ export default function App() {
               pictures={[italy1, italy2, italy3, italy4]}
             />
             <HeartCard team="Liverpool FC" logo={liverpewl} />
+          </div>
+        )}
+
+        {showPencilCards && (
+          <div className="absolute left-0 flex flex-col gap-4">
+            <PencilCard project="Facial Emotion Recognition with Convolutional Neural Networks" tech={facialRecognitionTech} github={facialRecognitionGit} points={[facialRecognition1, facialRecognition2, facialRecognition3]}/>
+            <PencilCard project="Baseball Data Analysis" tech={baseballTech} github={baseballGit} points={[baseball1, baseball2, baseball3]}/>
           </div>
         )}
       </div>
