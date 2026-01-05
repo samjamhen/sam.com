@@ -23,5 +23,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
+  "exclude": ["src/scripts/**"],
   "include": ["src"]
 }
+

@@ -28,6 +28,35 @@ const preloadImages = (imageUrls: string[]) => {
 };
 
 export default function App() {
+  const bonhommeSvgs = [
+    `${import.meta.env.BASE_URL}/assets/og.svg`,
+    `${import.meta.env.BASE_URL}/assets/mid.svg`,
+    `${import.meta.env.BASE_URL}/assets/blink.svg`,
+  ];
+
+  const [currentBonhomme, setCurrentBonhomme] = useState(0);
+
+  useEffect(() => {
+    const blinkCycle = () => {
+      // Show the "blink" state for a short time
+      setCurrentBonhomme(1); // Blink
+      setTimeout(() => {
+        setCurrentBonhomme(2); // Closed eyes
+        setTimeout(() => {
+          setCurrentBonhomme(0); // Open eyes
+        }, 200); // Time for the "closed" state
+      }, 100); // Time for the "blink" state
+    };
+
+    // Set up an interval to trigger the blink cycle
+    const interval = setInterval(() => {
+      blinkCycle();
+    }, 3000); // Time between blinks (adjust for blinking frequency)
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     // List of all images to preload
     const imagesToPreload = [
@@ -47,6 +76,7 @@ export default function App() {
   const [isHoveredBrain, setIsHoveredBrain] = useState(false);
   const [isHoveredHeart, setIsHoveredHeart] = useState(false);
   const [isHoveredPencil, setIsHoveredPencil] = useState(false);
+  const [isHoveredHeadphones, setIsHoveredHeadphones] = useState(false);
 
   const [showBrain, setShowBrain] = useState(true);
   const [showBrainCards, setShowBrainCards] = useState(false);
@@ -57,8 +87,11 @@ export default function App() {
   const [showPencil, setShowPencil] = useState(true);
   const [showPencilCards, setShowPencilCards] = useState(false);
 
+  const [showHeadphones, setShowHeadphones] = useState(true);
+  const [showHeadphonesCards, setShowHeadphonesCards] = useState(false);
+
   return (
-    <div className="relative w-screen flex flex-col items-center justify-center min-h-screen py-2 font-roboto">
+    <div className="relative w-screen flex flex-col items-center min-h-screen py-2 font-roboto">
       <div id="left-boxes" className="absolute w-1/3 top-10 left-10 space-y-4">
         {showBrainCards && (
           <div className="absolute left-0 flex flex-col gap-4">
@@ -102,20 +135,43 @@ export default function App() {
             <PencilCard project="Lesson Offering App" tech={trayneTech} github={trayneGit} points={[trayne1, trayne2, trayne3]}/>
           </div>
         )}
+
+        {showHeadphonesCards && (
+          <div className="space-y-4">
+            {/*<h1 className="font-bold">Favourite albums at the moment.</h1>*/}
+          <iframe
+            allow="autoplay *; encrypted-media *;"
+            frameBorder={0}
+            height={375}
+            style={{ width: "100%", maxWidth: 660, borderRadius: 12 }}
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/us/album/son-of-spergy/1839352404"
+          />
+
+          <iframe
+            allow="autoplay *; encrypted-media *;"
+            frameBorder={0}
+            height={375}
+            style={{ width: "100%", maxWidth: 660, borderRadius: 12 }}
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/us/album/from-me-2-u-ep/1852540873"
+          />
+        </div>
+        )}
       </div>
 
       <div id="name-box" className="flex flex-col items-center h-max">
-        <div id="name-box-text" className="text-center h-max mb-[150px]">
+        <div id="name-box-text" className="text-center h-max y-max mt-[100px] mb-[200px]">
           <h1 className="font-bold">sam.</h1>
         </div>
       </div>
 
       <div
         id="character-box"
-        className="relative mt-4 w-[150px] h-[150px] flex items-center justify-center"
+        className="relative mt-4 w-[150px] h-[150px] flex items-center justify-center mb-[100px]"
       >
         <img
-          src={`${import.meta.env.BASE_URL}/assets/bonhomme.svg`}
+          src={bonhommeSvgs[currentBonhomme]}
           alt="Bonhomme Character"
           width={150}
           height={150}
@@ -129,11 +185,12 @@ export default function App() {
             height={40}
             className={`absolute left-[55px] bottom-[227px] transition-transform ${
               isHoveredBrain ? "scale-110" : "scale-100"
-            }`}
+            } z-20`}
             onClick={() => {
               setShowBrainCards(!showBrainCards);
               setShowHeart(!showHeart);
               setShowPencil(!showPencil);
+              setShowHeadphones(!showHeadphones);
             }}
             onMouseEnter={() => setIsHoveredBrain(true)}
             onMouseLeave={() => setIsHoveredBrain(false)}
@@ -153,6 +210,7 @@ export default function App() {
               setShowHeartCards(!showHeartCards);
               setShowBrain(!showBrain);
               setShowPencil(!showPencil);
+              setShowHeadphones(!showHeadphones);
             }}
             onMouseEnter={() => setIsHoveredHeart(true)}
             onMouseLeave={() => setIsHoveredHeart(false)}
@@ -172,9 +230,30 @@ export default function App() {
               setShowPencilCards(!showPencilCards);
               setShowBrain(!showBrain);
               setShowHeart(!showHeart);
+              setShowHeadphones(!showHeadphones);
             }}
             onMouseEnter={() => setIsHoveredPencil(true)}
             onMouseLeave={() => setIsHoveredPencil(false)}
+          />
+        )}
+
+        {showHeadphones && (
+          <img
+            src={`${import.meta.env.BASE_URL}/assets/headphones.svg`}
+            alt="Headphones Icon"
+            width={100}
+            height={100}
+            className={`absolute left-[25px] bottom-[200px] transition-transform ${
+              isHoveredHeadphones ? "scale-110" : "scale-100"
+            } z-10`}
+            onClick={() => {
+              setShowHeadphonesCards(!showHeadphonesCards);
+              setShowBrain(!showBrain);
+              setShowHeart(!showHeart);
+              setShowPencil(!showPencil);
+            }}
+            onMouseEnter={() => setIsHoveredHeadphones(true)}
+            onMouseLeave={() => setIsHoveredHeadphones(false)}
           />
         )}
       </div>
@@ -239,6 +318,52 @@ export default function App() {
           <div className="absolute left-0 flex flex-col gap-4">
             <PencilCard project="Facial Emotion Recognition with Convolutional Neural Networks" tech={facialRecognitionTech} github={facialRecognitionGit} points={[facialRecognition1, facialRecognition2, facialRecognition3]}/>
             <PencilCard project="Baseball Data Analysis" tech={baseballTech} github={baseballGit} points={[baseball1, baseball2, baseball3]}/>
+          </div>
+        )}
+
+        {showHeadphonesCards && (
+          <div className="space-y-4">
+            {/*<h1 className="font-bold">Favourite chunes at the moment.</h1>*/}
+            <iframe
+              allow="autoplay *; encrypted-media *;"
+              frameBorder={0}
+              style={{ width: "100%", maxWidth: 660, borderRadius: 12, overflow: "hidden" }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/dtmf/1787022393?i=1787023936&itscg=30200"
+            />
+
+            <iframe
+              allow="autoplay *; encrypted-media *;"
+              frameBorder={0}
+              style={{ width: "100%", maxWidth: 660, borderRadius: 12, overflow: "hidden" }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/so-easy-to-fall-in-love/1817609404?i=1817609507"
+            />
+
+            <iframe
+              allow="autoplay *; encrypted-media *;"
+              frameBorder={0}
+              style={{ width: "100%", maxWidth: 660, borderRadius: 12, overflow: "hidden" }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/i-know-you/1512318724?i=1512318907&itscg=30200"
+            />
+
+            <iframe
+              allow="autoplay *; encrypted-media *;"
+              frameBorder={0}
+              style={{ width: "100%", maxWidth: 660, borderRadius: 12, overflow: "hidden" }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/the-recipe-feat-rema/1522795234?i=1522795688&itscg=30200"
+            />
+
+            <iframe
+              allow="autoplay *; encrypted-media *;"
+              frameBorder={0}
+              style={{ width: "100%", maxWidth: 660, borderRadius: 12, overflow: "hidden" }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/raindance/1847992481?i=1847992612&itscg=30200
+"
+            />
           </div>
         )}
       </div>
