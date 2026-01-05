@@ -19,19 +19,11 @@ import {
   baseballTech, baseballGit, baseball1, baseball2, baseball3
 } from "./constants/bulletPoints";
 
-{/*Preload images*/}
-const preloadImages = (imageUrls: string[]) => {
-  imageUrls.forEach((url) => {
-    const img = new Image();
-    img.src = url;
-  });
-};
-
 export default function App() {
   const bonhommeSvgs = [
-    `${import.meta.env.BASE_URL}/assets/og.svg`,
-    `${import.meta.env.BASE_URL}/assets/mid.svg`,
-    `${import.meta.env.BASE_URL}/assets/blink.svg`,
+    `${import.meta.env.BASE_URL}/assets/bonhomme.svg`,
+    `${import.meta.env.BASE_URL}/assets/bonhommeMid.svg`,
+    `${import.meta.env.BASE_URL}/assets/bonhommeBlink.svg`,
   ];
 
   const [currentBonhomme, setCurrentBonhomme] = useState(0);
@@ -55,22 +47,6 @@ export default function App() {
 
     // Clean up the interval on component unmount
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    // List of all images to preload
-    const imagesToPreload = [
-      // Thailand
-      thai1, thai2, thai3, thai4,
-      // Italy
-      italy1, italy2, italy3, italy4,
-      // Sports
-      liverpewl,
-      // Other images
-      facialRecognitionTech, baseballTech,
-    ];
-
-    preloadImages(imagesToPreload);
   }, []);
 
   const [isHoveredBrain, setIsHoveredBrain] = useState(false);
