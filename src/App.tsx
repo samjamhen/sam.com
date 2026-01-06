@@ -70,7 +70,7 @@ export default function App() {
     <div className="relative w-screen flex flex-col items-center min-h-screen py-2 font-roboto">
       <div id="left-boxes" className="absolute w-1/3 top-10 left-10 space-y-4">
         {showBrainCards && (
-          <div className="absolute left-0 flex flex-col gap-4">
+          <div className="animate-fadeIn absolute left-0 flex flex-col gap-4">
             <BrainCard
               title="Backend Software Developer"
               company="Intact Insurance"
@@ -89,7 +89,7 @@ export default function App() {
         )}
 
         {showHeartCards && (
-          <div className="absolute left-0 flex flex-col gap-4">
+          <div className="animate-fadeIn absolute left-0 flex flex-col gap-4">
             <HeartCard team="Les Canadiens de Montréal" logo={habs} />
             <HeartCard
               country="Hawaii"
@@ -105,7 +105,7 @@ export default function App() {
         )}
 
         {showPencilCards && (
-          <div className="absolute left-0 flex flex-col gap-4">
+          <div className="animate-fadeIn absolute left-0 flex flex-col gap-4">
             <PencilCard project="Campus Map Mobile Application" tech={campusMapTech} github={campusMapGit} points={[campusMap1, campusMap2]}/>
             <PencilCard project="Car Rental Management System" tech={carRentalTech} github={carRentalGit} points={[carRental1, carRental2, carRental3]}/>
             <PencilCard project="Lesson Offering App" tech={trayneTech} github={trayneGit} points={[trayne1, trayne2, trayne3]}/>
@@ -113,7 +113,7 @@ export default function App() {
         )}
 
         {showHeadphonesCards && (
-          <div className="space-y-4">
+          <div className="animate-fadeIn space-y-4">
             {/*<h1 className="font-bold">Favourite albums at the moment.</h1>*/}
           <iframe
             allow="autoplay *; encrypted-media *;"
@@ -256,7 +256,7 @@ export default function App() {
 
       <div id="right-boxes" className="absolute w-1/3 top-10 right-10 space-y-4">
         {showBrainCards && (
-          <div className="absolute right-0 flex flex-col gap-4">
+          <div className="animate-fadeIn absolute right-0 flex flex-col gap-4">
             <BrainCard
               title="Engineering Assistant"
               company="illumiSonics"
@@ -275,7 +275,7 @@ export default function App() {
         )}
 
         {showHeartCards && (
-          <div className="absolute right-0 flex flex-col gap-4">
+          <div className="animate-fadeIn absolute right-0 flex flex-col gap-4">
             <HeartCard
               country="Thailand"
               date="January 2025"
@@ -291,14 +291,14 @@ export default function App() {
         )}
 
         {showPencilCards && (
-          <div className="absolute left-0 flex flex-col gap-4">
+          <div className="animate-fadeIn absolute left-0 flex flex-col gap-4">
             <PencilCard project="Facial Emotion Recognition with Convolutional Neural Networks" tech={facialRecognitionTech} github={facialRecognitionGit} points={[facialRecognition1, facialRecognition2, facialRecognition3]}/>
             <PencilCard project="Baseball Data Analysis" tech={baseballTech} github={baseballGit} points={[baseball1, baseball2, baseball3]}/>
           </div>
         )}
 
         {showHeadphonesCards && (
-          <div className="space-y-4">
+          <div className="animate-fadeIn space-y-4">
             {/*<h1 className="font-bold">Favourite chunes at the moment.</h1>*/}
             <iframe
               allow="autoplay *; encrypted-media *;"
